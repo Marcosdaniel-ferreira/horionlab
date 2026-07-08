@@ -1,0 +1,123 @@
+/* ========================================================
+   RESET & ESTILO PREMIUM DARK
+   ======================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ========================================================
+   ESTRUTURA DO CANVAS (HEADER)
+   ======================================================== */
+.canvas-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  position: relative;
+}
+
+#horizon-canvas {
+  width: 100vw;
+  height: 100vh;
+  /* Isso garante que os frames cubram a tela sem achatar (estilo background-size: cover) */
+  object-fit: cover; 
+  display: block;
+}
+
+.canvas-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.indicator {
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ========================================================
+   SEGUNDA PÁGINA (CONTEÚDO HORIZON)
+   ======================================================== */
+.main-content {
+  position: relative;
+  z-index: 5;
+  background-color: #050505;
+}
+
+.about-section {
+  padding: 150px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.subtitle {
+  font-family: monospace;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.main-headline {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  max-width: 1100px;
+  margin-bottom: 80px;
+}
+
+.main-headline span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.description-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+}
+
+.stats-box {
+  display: flex;
+  gap: 80px;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 5px;
+}
