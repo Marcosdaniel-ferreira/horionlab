@@ -33,7 +33,7 @@ body {
     pointer-events: none;
 }
 
-/* TOPO */
+/* TOPO (Centralizado e Cinematográfico) */
 .hero-scroll {
     height: 250vh; 
     position: relative;
@@ -47,28 +47,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    padding: 4rem 10vw;
+    align-items: center; /* Centraliza tudo horizontalmente */
+    padding: 0 2rem;
     pointer-events: none;
+    text-align: center;
 }
 
-.hero-title {
-    font-size: clamp(4rem, 10vw, 10rem);
-    font-weight: 700;
-    letter-spacing: -0.05em; 
-    color: #fff;
-    line-height: 1;
+.hero-main-logo {
+    width: 100%;
+    max-width: 600px; /* Deixa a logo bem grande, mas com um limite para não quebrar no PC */
+    height: auto;
+    margin-bottom: 2rem; /* Espaço de respiro antes do texto */
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.6)); /* Sombra suave para a logo não sumir no fundo do vídeo */
 }
 
 .hero-subtitle {
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-    font-weight: 500;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* Fonte menor e refinada */
+    font-weight: 400;
     color: var(--c-light-grey);
-    letter-spacing: 0.02em;
-    margin-top: 0.5rem;
+    letter-spacing: 0.4em; /* Espaçamento bem largo entre as letras (Tracking) */
+    text-transform: uppercase;
+    opacity: 0.8; /* Levemente transparente para não roubar a atenção da logo */
 }
-
-.light-text { color: #fff !important; }
 
 /* MAIN CONTENT (A folha clara) */
 .main-content {
@@ -283,9 +283,15 @@ body {
 }
 
 /* RODAPÉ */
+/* -------------------------------------------
+   RODAPÉ E LINKS
+--------------------------------------------- */
+/* -------------------------------------------
+   RODAPÉ, LINKS E POLÍTICAS
+--------------------------------------------- */
 .footer {
     background-color: var(--c-black);
-    padding: 4rem 0;
+    padding: 4rem 0 2rem 0; /* Padding inferior menor para equilibrar a nova barra */
 }
 
 .footer-content {
@@ -293,12 +299,77 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Linha divisória ultra fina e elegante */
 }
 
-.footer-contact p {
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-link {
     color: #a1a1a6;
-    text-align: right;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+/* NOVA: Barra Inferior (Legal & Copyright) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
+
+.copyright {
+    color: #6e6e73; /* Cinza escuro, quase mesclando com o fundo */
+    font-size: 0.85rem;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legal-link {
+    color: #6e6e73;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: #a1a1a6; /* Clareia levemente ao passar o mouse */
+}
+
+/* Ajustes para Celular (Mobile) */
+@media (max-width: 768px) {
+    .footer-content, .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+/* Ajuste para telas de celular */
+@media (max-width: 768px) {
+    .top-logo {
+        top: 2rem;
+        left: 2rem;
+    }
 }
