@@ -131,23 +131,52 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* VÍDEO PRINCIPAL */
+/* -------------------------------------------
+   VÍDEO FULLSCREEN & SOFT SHADOW
+--------------------------------------------- */
+.video-section {
+    background-color: var(--c-black);
+    padding: 0; /* Removemos o respiro para grudar nas bordas */
+    width: 100%;
+}
+
 .video-wrapper {
     position: relative;
     width: 100%;
-    height: 70vh;
-    border-radius: 32px;
+    height: 100vh; /* 100% da altura da tela */
+    border-radius: 0; /* Tiramos os cantos arredondados para tela cheia */
     overflow: hidden;
     background-color: var(--c-black);
 }
 
-.bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.bg-video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    opacity: 0.3; 
+}
+
+/* O degradê preto macio subindo da base */
+.video-soft-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Cobre os 40% finais da altura do vídeo */
+    /* Vai do preto 100% embaixo até o transparente em cima */
+    background: linear-gradient(to top, var(--c-black) 0%, transparent 100%);
+    z-index: 1; 
+    pointer-events: none;
+}
 
 .video-overlay {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%; 
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; text-align: center;
+    width: 100%; 
+    text-align: center;
+    z-index: 2; /* Garante que o texto fique em cima da sombra */
 }
 
 .video-text {
