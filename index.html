@@ -1,54 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon | Real Estate Transformation</title>
-  
-  <link rel="stylesheet" href="style.css">
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon // Immersive Motion Lab</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="canvas-container" class="canvas-wrapper">
-    <canvas id="horizon-canvas"></canvas>
-    
-    <div class="canvas-overlay">
-      <p class="indicator">Scroll para construir _</p>
-    </div>
-  </div>
+    <canvas id="sequence-canvas"></canvas>
 
-
-  <main class="main-content">
-    <section class="about-section">
-      <div class="container">
-        <p class="subtitle">// NOSSO PROPÓSITO</p>
-        <h2 class="main-headline">
-          O futuro do mercado imobiliário <span>construído antes do primeiro tijolo</span>.
-        </h2>
-        <div class="grid-two-columns">
-          <p class="description-text">
-            A Horizon une inteligência artificial e computação visual de ponta para romper a barreira da imaginação. Transformamos plantas complexas e terrenos vazios em experiências visuais imersivas que aceleram a decisão de compra.
-          </p>
-          <div class="stats-box">
-            <div class="stat-item">
-              <h3>Realismo</h3>
-              <p>Nível Cinematográfico</p>
-            </div>
-            <div class="stat-item">
-              <h3>+40%</h3>
-              <p>Conversão em Vendas</p>
-            </div>
-          </div>
+    <header class="hero-scroll" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">HORIZON</h1>
+            <p class="hero-subtitle">Immersive Motion Lab</p>
         </div>
-      </div>
-    </section>
-  </main>
+    </header>
 
-  <script src="script.js"></script>
+    <div class="main-content">
+        
+        <section class="section about">
+            <div class="container">
+                <h2>Moldando a Realidade</h2>
+                <p>Nós somos a Horizon. Elevamos o padrão da apresentação imobiliária fundindo tecnologia imersiva e direção de arte de ponta. Não entregamos apenas renders; nós esculpimos experiências visuais que antecipam o futuro, conectam investidores e materializam projetos antes mesmo de saírem do papel.</p>
+            </div>
+        </section>
+
+        <section class="section video-section">
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="background-loop.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h2 class="video-text">O futuro visual das imobiliárias</h2>
+            </div>
+        </section>
+
+        <section class="section services">
+            <div class="container">
+                <h2 class="section-title">O que fazemos</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Horizon Terreno</h3>
+                        <p>Transforma terrenos em oportunidades visuais.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Horizon Projeto</h3>
+                        <p>Transforma plantas e projetos em experiências realistas.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Horizon Loteamento</h3>
+                        <p>Apresenta loteamentos completos antes da implantação.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Horizon Evolução</h3>
+                        <p>Mostra a evolução da obra até sua conclusão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cases">
+            <div class="container">
+                <h2 class="section-title">Nossos Projetos</h2>
+                <div class="cases-grid">
+                    <div class="case-card">
+                        <video autoplay loop muted playsinline class="case-video">
+                            <source src="case-01.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="case-title">Residencial Aurora</h3>
+                    </div>
+                    <div class="case-card">
+                        <video autoplay loop muted playsinline class="case-video">
+                            <source src="case-02.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="case-title">Complexo Lumina</h3>
+                    </div>
+                    <div class="case-card">
+                        <video autoplay loop muted playsinline class="case-video">
+                            <source src="case-03.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="case-title">Loteamento Vale Verde</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta">
+            <div class="container">
+                <h2>Pronto para materializar o seu projeto?</h2>
+                <a href="mailto:hello@studiom7.com.br" class="btn">Inicie uma conversa</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <img src="logo-horizon.svg" alt="Horizon Logo" width="150">
+                </div>
+                <div class="footer-contact">
+                    <p>hello@studiom7.com.br</p>
+                    <p>35 9885-3689</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

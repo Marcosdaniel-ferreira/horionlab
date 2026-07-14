@@ -1,123 +1,234 @@
-/* ========================================================
-   RESET & ESTILO PREMIUM DARK
-   ======================================================== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-  background-color: #050505;
-  color: #ffffff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+    background-color: #050505; /* Fundo escuro padrão */
+    color: #F0F0F0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+}
+
+/* CANVAS ANIMADO NO FUNDO */
+#sequence-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; 
+    pointer-events: none;
+}
+
+/* CONTAINER DO TOPO - Espaço para o Scroll funcionar */
+.hero-scroll {
+    height: 250vh; /* Altura para dar tempo de rolar os 16 frames */
+    position: relative;
+    z-index: 1;
+}
+
+/* TEXTO DO TOPO FIXADO NA TELA DURANTE O SCROLL */
+.hero-content {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 4rem 10vw;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #A0A0A0;
+}
+
+/* CONTEÚDO PRINCIPAL (Fundo Sólido cobrindo o Canvas) */
+.main-content {
+    position: relative;
+    z-index: 2;
+    background-color: #050505;
 }
 
 .container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* ========================================================
-   ESTRUTURA DO CANVAS (HEADER)
-   ======================================================== */
-.canvas-wrapper {
-  height: 100vh;
-  width: 100vw;
-  background-color: #000;
-  position: relative;
+.section {
+    padding: 8rem 0;
 }
 
-#horizon-canvas {
-  width: 100vw;
-  height: 100vh;
-  /* Isso garante que os frames cubram a tela sem achatar (estilo background-size: cover) */
-  object-fit: cover; 
-  display: block;
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
-.canvas-overlay {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+/* SEÇÃO 1: SOBRE */
+.about p {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #D0D0D0;
 }
 
-.indicator {
-  font-family: monospace;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  animation: pulse 2s infinite;
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #fff;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+/* SEÇÃO 2: VÍDEO FULLSCREEN */
+.video-section {
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* ========================================================
-   SEGUNDA PÁGINA (CONTEÚDO HORIZON)
-   ======================================================== */
-.main-content {
-  position: relative;
-  z-index: 5;
-  background-color: #050505;
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.6; /* Deixa o vídeo um pouco mais escuro para ler o texto */
 }
 
-.about-section {
-  padding: 150px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
+.video-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
 
-.subtitle {
-  font-family: monospace;
-  color: #fff;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
+.video-text {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
-.main-headline {
-  font-size: 4.5rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  max-width: 1100px;
-  margin-bottom: 80px;
+/* SEÇÃO 3: SERVIÇOS */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
 }
 
-.main-headline span {
-  color: rgba(255, 255, 255, 0.3);
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FFF;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
 }
 
-.grid-two-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
+.service-card p {
+    color: #A0A0A0;
+    line-height: 1.6;
 }
 
-.description-text {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #a0a0a0;
+/* SEÇÃO 4: CASES */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.stats-box {
-  display: flex;
-  gap: 80px;
+.case-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.stat-item h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.case-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #111; /* Fallback enquanto o vídeo carrega */
 }
 
-.stat-item p {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 5px;
+.case-title {
+    font-size: 1.2rem;
+    color: #D0D0D0;
+}
+
+/* SEÇÃO 5: CTA */
+.cta {
+    text-align: center;
+    background-color: #0A0A0A;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: #FFF;
+    color: #050505;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: #E0E0E0;
+}
+
+/* RODAPÉ */
+.footer {
+    border-top: 1px solid #222;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-contact p {
+    color: #A0A0A0;
+    text-align: right;
+    margin-bottom: 0.5rem;
 }
