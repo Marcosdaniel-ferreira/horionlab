@@ -13,8 +13,7 @@ window.addEventListener("resize", () => {
 });
 
 const frameCount = 16;
-const currentFrame = index => `frame-${(index + 1).toString().padStart(2, '0')}.webp`;
-
+const currentFrame = index => `assets/sequence/frame-${(index + 1).toString().padStart(2, '0')}.webp`;
 const images = [];
 const sequence = { frame: 0 };
 
