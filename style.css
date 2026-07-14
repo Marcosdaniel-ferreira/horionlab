@@ -248,22 +248,66 @@ body {
 /* -------------------------------------------
    NOVO: CTA SECTION (Minimalista e Forte)
 --------------------------------------------- */
+/* -------------------------------------------
+   NOVO: CTA SECTION (Com Imagem de Fundo)
+--------------------------------------------- */
+.cta {
+    position: relative;
+    padding: 10rem 0; /* Aumentei o respiro para a imagem aparecer mais */
+    overflow: hidden;
+    background-color: var(--c-black); /* Cor de fundo caso a imagem demore a carregar */
+}
+
+/* Container da Imagem */
+.cta-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cta-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Centraliza o corte da imagem */
+}
+
+/* Película escura em degradê para dar leitura ao texto */
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.9));
+}
+
+/* O conteúdo flutuando por cima */
 .cta-container {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    padding: 2rem 0 6rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.cta-subtitle {
-    font-size: 1.2rem;
-    color: var(--c-teal-mute);
-    margin-bottom: 3rem;
-    max-width: 500px;
+/* Forçando os textos a ficarem claros em cima da imagem */
+.cta .huge-title {
+    color: #ffffff;
 }
 
-/* Botão usando a sua cor Laranja com elegância */
+.cta .cta-subtitle {
+    color: #d1d1d6; /* Cinza claro elegante */
+    margin-bottom: 3rem;
+    max-width: 500px;
+    font-size: 1.2rem;
+}
+
+/* O Botão continua usando o seu Laranja perfeitamente */
 .btn-primary {
     display: inline-block;
     padding: 1.2rem 3rem;
@@ -277,11 +321,10 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #be5338; /* Laranja um pouco mais escuro no hover */
+    background-color: #be5338; 
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(213, 100, 72, 0.3);
 }
-
 /* RODAPÉ */
 /* -------------------------------------------
    RODAPÉ E LINKS
