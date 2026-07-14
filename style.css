@@ -1,13 +1,13 @@
-/* VARIÁVEIS DE CORES APPLE */
+/* VARIÁVEIS (Paleta usada como acentos, não fundos) */
 :root {
-    --bg-light: #ffffff;
-    --bg-gray: #f5f5f7;
-    --text-dark: #1d1d1f;
-    --text-muted: #86868b;
-    --apple-blue: #0066cc;
+    --c-orange: #D56448;
+    --c-dark-blue: #0D2233;
+    --c-teal-mute: #36515A;
+    --c-black: #010101;
+    --c-light-grey: #f7f7f7; /* Um cinza ainda mais claro/branco sujo para o fundo editorial */
+    --c-text-dark: #1a1a1a;
 }
 
-/* RESET E TIPOGRAFIA NATIVA */
 * {
     margin: 0;
     padding: 0;
@@ -15,26 +15,25 @@
 }
 
 body {
-    /* A mágica da fonte da Apple: puxa a San Francisco no Mac/iOS e equivalentes em outros sistemas */
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000; /* Fundo preto apenas para a área do Canvas */
-    color: var(--text-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    background-color: var(--c-black); 
+    color: var(--c-text-dark);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
-/* CANVAS ANIMADO NO FUNDO */
+/* CANVAS NO FUNDO */
 #sequence-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0; 
+    z-index: 0;
     pointer-events: none;
 }
 
-/* HERO (TOPO) */
+/* TOPO */
 .hero-scroll {
     height: 250vh; 
     position: relative;
@@ -56,182 +55,237 @@ body {
 .hero-title {
     font-size: clamp(4rem, 10vw, 10rem);
     font-weight: 700;
-    letter-spacing: -0.05em; /* Tracking negativo estilo Apple */
-    color: #ffffff;
+    letter-spacing: -0.05em; 
+    color: #fff;
     line-height: 1;
 }
 
 .hero-subtitle {
     font-size: clamp(1.2rem, 2vw, 1.8rem);
     font-weight: 500;
-    color: #a1a1a6;
+    color: var(--c-light-grey);
     letter-spacing: 0.02em;
     margin-top: 0.5rem;
 }
 
-/* CONTEÚDO PRINCIPAL (A "Folha Branca" que sobe) */
+.light-text { color: #fff !important; }
+
+/* MAIN CONTENT (A folha clara) */
 .main-content {
     position: relative;
-    z-index: 2;
-    background-color: var(--bg-light);
-    border-top-left-radius: 40px; /* Canto arredondado luxuoso */
+    z-index: 2; 
+    background-color: var(--c-light-grey);
+    border-top-left-radius: 40px; 
     border-top-right-radius: 40px;
-    padding-top: 4rem;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.2); /* Sombra suave separando do canvas */
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.4); 
+    overflow: hidden; 
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px; /* Alarguei um pouco para caber os portfólios */
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.section {
-    padding: 6rem 0;
+.section { padding: 8rem 0; }
+
+/* CORES DAS SEÇÕES (Equilibradas) */
+.about { background-color: var(--c-light-grey); }
+.video-section { background-color: var(--c-black); padding: 4rem 0; }
+.services { background-color: var(--c-dark-blue); color: #fff; }
+.cases { background-color: var(--c-light-grey); }
+.cta { background-color: #fff; border-top: 1px solid #eaeaea; } /* Fundo puramente branco para estourar o contraste */
+
+/* TIPOGRAFIA EDITORIAL */
+.overline {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--c-teal-mute);
+    margin-bottom: 1rem;
 }
 
-/* TIPOGRAFIA INTERNA ESTILO APPLE */
 .apple-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--text-dark);
+    letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
+    line-height: 1.1;
 }
 
 .apple-text {
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     font-weight: 400;
-    color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.5;
+    color: var(--c-teal-mute);
+    max-width: 800px;
 }
 
-.text-center {
-    text-align: center;
+.huge-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: var(--c-text-dark);
+    margin-bottom: 1.5rem;
 }
 
-/* VÍDEO PRINCIPAL COM CANTOS ARREDONDADOS */
+/* VÍDEO PRINCIPAL */
 .video-wrapper {
     position: relative;
     width: 100%;
     height: 70vh;
     border-radius: 32px;
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--c-black);
 }
 
-.bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-}
+.bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
 
 .video-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
+    width: 100%; text-align: center;
 }
 
 .video-text {
     font-size: clamp(2rem, 4vw, 4rem);
     font-weight: 600;
     letter-spacing: -0.03em;
-    color: #ffffff;
+    color: #fff;
 }
 
-/* CARDS DE SERVIÇOS (Fundo Cinza Claro) */
+/* CARDS: O QUE FAZEMOS */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
-}
-
-.apple-card {
-    background-color: var(--bg-gray);
-    padding: 2.5rem 2rem;
-    border-radius: 24px;
-    transition: transform 0.3s ease;
-}
-
-.apple-card:hover {
-    transform: scale(1.02);
-}
-
-.apple-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-}
-
-.apple-card p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.4;
-}
-
-/* CARDS DE PROJETOS */
-.cases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
     margin-top: 3rem;
 }
 
-.apple-card-case {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.apple-card {
+    background-color: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
-.apple-card-case .case-video {
+.apple-card:hover {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.apple-card h3 { font-size: 1.5rem; margin-bottom: 0.8rem; color: #fff; }
+.apple-card p { color: #a1a1a6; line-height: 1.5; }
+
+/* -------------------------------------------
+   NOVO: CARDS PROJETOS (Estilo Galeria/Editorial)
+--------------------------------------------- */
+.cases-header {
+    margin-bottom: 4rem;
+}
+
+.cases-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem 2rem;
+}
+
+/* Truque para criar o efeito desalinhado (offset) típico de portfólios finos */
+@media (min-width: 768px) {
+    .mt-offset {
+        margin-top: 4rem;
+    }
+}
+
+.case-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.case-item:hover .case-video-wrapper {
+    transform: scale(0.98);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.case-video-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    aspect-ratio: 4 / 5; /* Formato retrato elegante em vez de 16:9 comum */
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+.case-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05); /* Leve zoom interno para não mostrar bordas pretas */
+}
+
+.case-info {
+    padding: 0 0.5rem;
 }
 
 .case-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--text-dark);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--c-text-dark);
 }
 
-/* CTA & BOTÕES */
-.cta {
+.case-category {
+    font-size: 1rem;
+    color: var(--c-teal-mute);
+    margin-top: 0.3rem;
+}
+
+/* -------------------------------------------
+   NOVO: CTA SECTION (Minimalista e Forte)
+--------------------------------------------- */
+.cta-container {
     text-align: center;
-    padding-bottom: 8rem;
+    padding: 2rem 0 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.btn-apple {
+.cta-subtitle {
+    font-size: 1.2rem;
+    color: var(--c-teal-mute);
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+/* Botão usando a sua cor Laranja com elegância */
+.btn-primary {
     display: inline-block;
-    margin-top: 1.5rem;
-    padding: 1.2rem 2.5rem;
-    background-color: var(--text-dark);
-    color: #ffffff;
+    padding: 1.2rem 3rem;
+    background-color: var(--c-orange);
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    border-radius: 980px; /* Formato de "pílula" clássico da Apple */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 980px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.btn-apple:hover {
-    background-color: #000000;
-    transform: scale(1.05);
+.btn-primary:hover {
+    background-color: #be5338; /* Laranja um pouco mais escuro no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(213, 100, 72, 0.3);
 }
 
 /* RODAPÉ */
 .footer {
-    border-top: 1px solid #e5e5ea;
-    padding: 2rem 0;
-    background-color: var(--bg-gray);
+    background-color: var(--c-black);
+    padding: 4rem 0;
 }
 
 .footer-content {
@@ -243,7 +297,8 @@ body {
 }
 
 .footer-contact p {
-    color: var(--text-muted);
+    color: #a1a1a6;
     text-align: right;
     font-size: 0.9rem;
+    line-height: 1.6;
 }

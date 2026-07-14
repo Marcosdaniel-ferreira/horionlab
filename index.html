@@ -8,27 +8,31 @@
 </head>
 <body>
 
+    <!-- Canvas Fixo -->
     <canvas id="sequence-canvas"></canvas>
 
+    <!-- Topo -->
     <header class="hero-scroll" id="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Horizon.</h1>
-            <p class="hero-subtitle">Immersive Motion Lab</p>
+            <h1 class="hero-title fade-blur">Horizon.</h1>
+            <p class="hero-subtitle fade-blur">Immersive Motion Lab</p>
         </div>
     </header>
 
     <div class="main-content">
         
+        <!-- Sobre -->
         <section class="section about">
             <div class="container">
-                <h2 class="apple-title">Moldando a realidade.</h2>
-                <p class="apple-text">Elevamos o padrão da apresentação imobiliária fundindo tecnologia imersiva e direção de arte de ponta. Não entregamos apenas renders; nós esculpimos experiências visuais que antecipam o futuro e conectam investidores antes mesmo do projeto sair do papel.</p>
+                <h2 class="apple-title fade-blur">Moldando a realidade.</h2>
+                <p class="apple-text fade-blur">Elevamos o padrão da apresentação imobiliária fundindo tecnologia imersiva e direção de arte de ponta. Não entregamos apenas renders; nós esculpimos experiências visuais que antecipam o futuro e conectam investidores antes mesmo do projeto sair do papel.</p>
             </div>
         </section>
 
+        <!-- Vídeo Full -->
         <section class="section video-section">
             <div class="container">
-                <div class="video-wrapper">
+                <div class="video-wrapper fade-blur">
                     <video autoplay loop muted playsinline class="bg-video">
                         <source src="background-loop.mp4" type="video/mp4">
                     </video>
@@ -39,22 +43,25 @@
             </div>
         </section>
 
+        <!-- O que fazemos (Fundo Dark Blue que você gostou) -->
         <section class="section services">
             <div class="container">
+                <p class="overline fade-blur">Nossas Soluções</p>
+                <h2 class="apple-title light-text fade-blur">O que fazemos.</h2>
                 <div class="services-grid">
-                    <div class="apple-card">
+                    <div class="apple-card fade-blur">
                         <h3>Horizon Terreno</h3>
                         <p>Transforma terrenos em oportunidades visuais.</p>
                     </div>
-                    <div class="apple-card">
+                    <div class="apple-card fade-blur">
                         <h3>Horizon Projeto</h3>
                         <p>Transforma plantas e projetos em experiências realistas.</p>
                     </div>
-                    <div class="apple-card">
+                    <div class="apple-card fade-blur">
                         <h3>Horizon Loteamento</h3>
                         <p>Apresenta loteamentos completos antes da implantação.</p>
                     </div>
-                    <div class="apple-card">
+                    <div class="apple-card fade-blur">
                         <h3>Horizon Evolução</h3>
                         <p>Mostra a evolução da obra até sua conclusão.</p>
                     </div>
@@ -62,39 +69,66 @@
             </div>
         </section>
 
+        <!-- NOVO: Projetos (Estilo Portfólio Tales Ramiro, fundo claro e limpo) -->
         <section class="section cases">
             <div class="container">
-                <h2 class="apple-title text-center">Nossos Projetos.</h2>
-                <div class="cases-grid">
-                    <div class="apple-card-case">
-                        <video autoplay loop muted playsinline class="case-video">
-                            <source src="case-01.mp4" type="video/mp4">
-                        </video>
-                        <h3 class="case-title">Residencial Aurora</h3>
+                <div class="cases-header fade-blur">
+                    <p class="overline">Portfólio</p>
+                    <h2 class="apple-title">Projetos em destaque.</h2>
+                </div>
+                
+                <div class="cases-editorial-grid">
+                    <div class="case-item fade-blur">
+                        <div class="case-video-wrapper">
+                            <video autoplay loop muted playsinline class="case-video">
+                                <source src="case-01.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Residencial Aurora</h3>
+                            <p class="case-category">Horizon Projeto</p>
+                        </div>
                     </div>
-                    <div class="apple-card-case">
-                        <video autoplay loop muted playsinline class="case-video">
-                            <source src="case-02.mp4" type="video/mp4">
-                        </video>
-                        <h3 class="case-title">Complexo Lumina</h3>
+
+                    <div class="case-item fade-blur mt-offset">
+                        <div class="case-video-wrapper">
+                            <video autoplay loop muted playsinline class="case-video">
+                                <source src="case-02.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Complexo Lumina</h3>
+                            <p class="case-category">Horizon Evolução</p>
+                        </div>
                     </div>
-                    <div class="apple-card-case">
-                        <video autoplay loop muted playsinline class="case-video">
-                            <source src="case-03.mp4" type="video/mp4">
-                        </video>
-                        <h3 class="case-title">Loteamento Vale Verde</h3>
+
+                    <div class="case-item fade-blur">
+                        <div class="case-video-wrapper">
+                            <video autoplay loop muted playsinline class="case-video">
+                                <source src="case-03.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Vale Verde</h3>
+                            <p class="case-category">Horizon Loteamento</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- NOVO: CTA (Massivo, limpo e direto ao ponto) -->
         <section class="section cta">
-            <div class="container">
-                <h2 class="apple-title">Materialize seu projeto.</h2>
-                <a href="mailto:hello@studiom7.com.br" class="btn-apple">Inicie uma conversa</a>
+            <div class="container cta-container">
+                <h2 class="huge-title fade-blur">Pronto para<br>materializar?</h2>
+                <p class="cta-subtitle fade-blur">Vamos transformar sua planta em uma experiência imersiva.</p>
+                <div class="fade-blur">
+                    <a href="mailto:hello@studiom7.com.br" class="btn-primary">Iniciar Projeto</a>
+                </div>
             </div>
         </section>
 
+        <!-- Rodapé Minimalista -->
         <footer class="footer">
             <div class="container footer-content">
                 <div class="footer-logo">
