@@ -12,10 +12,9 @@ window.addEventListener("resize", () => {
     render(); 
 });
 
-const frameCount = 16;
+const frameCount = 150;
 // Lembre-se do caminho correto que ajustamos antes
-const currentFrame = index => `assets/sequence/frame-${(index + 1).toString().padStart(2, '0')}.webp`;
-
+const currentFrame = index => `assets/sequence/frame-${index.toString().padStart(5, '0')}.webp`;
 const images = [];
 const sequence = { frame: 0 };
 
