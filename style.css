@@ -156,6 +156,60 @@ body {
     opacity: 0.3; 
 }
 
+/* -------------------------------------------
+   SEÇÃO MANIFESTO (A DOR DO MERCADO)
+--------------------------------------------- */
+.manifesto {
+    background-color: var(--c-black);
+    padding: 12rem 0; /* Respiro imenso para dar foco total ao texto */
+    border-top: 1px solid rgba(255, 255, 255, 0.03); /* Linha divisória ultra sutil */
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide a tela no meio */
+    gap: 6rem;
+    align-items: center;
+}
+
+.manifesto-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.manifesto-copy {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    line-height: 1.6;
+    color: #a1a1a6; /* Cinza escuro elegante */
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+/* O destaque final acendendo em branco */
+.highlight-text {
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+/* Ajuste Responsivo para Celulares e Tablets */
+@media (max-width: 992px) {
+    .manifesto-grid {
+        grid-template-columns: 1fr; /* Empilha os textos no celular */
+        gap: 3rem;
+    }
+    
+    .manifesto {
+        padding: 8rem 0;
+    }
+}
+
+
+
 /* O degradê preto macio subindo da base */
 .video-soft-shadow {
     position: absolute;
@@ -273,6 +327,226 @@ body {
     color: var(--c-teal-mute);
     margin-top: 0.3rem;
 }
+
+
+/* -------------------------------------------
+   SEÇÃO: NOSSAS SOLUÇÕES (Premium HUD)
+--------------------------------------------- */
+.solutions {
+    background-color: var(--c-black);
+    padding: 10rem 0;
+}
+
+/* Grid de 3 Colunas no Desktop */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; /* Espaço entre os cards */
+}
+
+/* O "Card" - Transparente com Bordas Premium */
+.solution-card {
+    position: relative;
+    background-color: rgba(5, 5, 226, 0.4); /* Fundo sutilmente mais claro que o preto */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borda quase invisível */
+    border-radius: 12px; /* Cantos levemente arredondados */
+    padding: 3.5rem 2.5rem;
+    overflow: hidden; /* Garante que a imagem de fundo não saia */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* -------------------------------------------
+   SEÇÃO: NOSSO MÉTODO (Fundo Branco)
+--------------------------------------------- */
+.transform-section {
+    background-color: rgba(54, 81, 90, 1);
+    padding: 10rem 0;
+}
+
+.dark-mode-title {
+    color: #1d1d1f; /* Quase preto, bem elegante */
+}
+
+/* Grid de 3 Colunas */
+.transform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+/* O Card agora no modo claro */
+.transform-card {
+    position: relative;
+    background-color: #f5f5f7; /* Cinza ultra claro da Apple */
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Borda quase imperceptível */
+    border-radius: 12px;
+    padding: 3.5rem 2.5rem;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.transform-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(213, 100, 72, 0.5); /* Nosso laranja na borda ao passar o mouse */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); /* Sombra mais suave para fundo branco */
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card-icon {
+    color: var(--c-orange); /* O ícone laranja ganha super destaque no claro */
+    margin-bottom: 2rem;
+    display: inline-flex;
+    transition: transform 0.4s ease;
+}
+
+.transform-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+/* Textos adaptados para o fundo claro */
+.card-title-light {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.card-copy-light {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #515154; /* Cinza médio para leitura perfeita */
+    margin: 0;
+}
+
+/* --- Imagens de Fundo nos Cards --- */
+/* Se quiser manter o efeito da imagem de fundo com baixa opacidade */
+.card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15; /* Opacidade baixa */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    filter: grayscale(100%);
+}
+
+.transform-card:hover .card-bg-image {
+    opacity: 0.25; /* Fica levemente mais forte no hover */
+    transform: scale(1.05);
+}
+
+/* Degradê branco para proteger a leitura do texto por cima da imagem */
+.card-bg-image::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(245, 245, 247, 0.3), rgba(245, 245, 247, 0.95));
+}
+
+/* Substitua pelas suas imagens reais (opcional) */
+.step-bg-1 { background-image: url('assets/img/imagem-drone.jpg'); background-size: cover; background-position: center; }
+.step-bg-2 { background-image: url('assets/img/imagem-ia.jpg'); background-size: cover; background-position: center; }
+.step-bg-3 { background-image: url('assets/img/imagem-play.jpg'); background-size: cover; background-position: center; }
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .transform-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Efeito de Hover: Acende a borda e levanta o card */
+.solution-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(213, 100, 72, 0.4); /* Nosso laranja sutil na borda */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+/* Container do conteúdo (em cima da imagem) */
+.card-content {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique legível */
+    pointer-events: none; /* Deixa o clique passar para o card se necessário */
+}
+
+/* Ícone de Traço (Orange) */
+.card-icon {
+    color: var(--c-orange); /* Usa nossa cor premium */
+    margin-bottom: 2rem;
+    display: inline-flex;
+    transition: transform 0.4s ease;
+}
+
+.solution-card:hover .card-icon {
+    transform: scale(1.1); /* Ícone cresce sutilmente no hover */
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.card-copy {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #a1a1a6; /* Cinza claro legível */
+    margin: 0;
+}
+
+/* --- Imagens de Fundo nos Cards (Opacidade Baixa) --- */
+.card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Atrás do texto */
+    opacity: 0.08; /* A mágica: Quase transparente, apenas textura */
+    transition: opacity 0.4s ease;
+    filter: grayscale(100%); /* Mantém monocromático para não brigar */
+}
+
+/* Aumenta sutilmente a opacidade no hover */
+.solution-card:hover .card-bg-image {
+    opacity: 0.15;
+}
+
+/* Defina suas imagens reais aqui */
+.sol-bg-1 { background-image: url('assets/img/card-vr.jpg'); background-size: cover; background-position: center; }
+.sol-bg-2 { background-image: url('assets/img/card-motion.jpg'); background-size: cover; background-position: center; }
+.sol-bg-3 { background-image: url('assets/img/card-interativo.jpg'); background-size: cover; background-position: center; }
+
+/* --- Responsividade (Celular) --- */
+@media (max-width: 992px) {
+    .solutions-grid {
+        grid-template-columns: 1fr; /* Empilha no celular */
+        gap: 1.5rem;
+    }
+    
+    .solution-card {
+        padding: 2.5rem 2rem;
+    }
+}
+
 
 /* -------------------------------------------
    NOVO: CTA SECTION (Minimalista e Forte)
