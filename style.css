@@ -362,12 +362,17 @@ body {
    SEÇÃO: NOSSO MÉTODO (Fundo Branco)
 --------------------------------------------- */
 .transform-section {
-    background-color: rgba(213, 100, 72, 1);
+    background: linear-gradient(rgb(0, 0, 0), rgb(4, 26, 44), #36515Aff, #0F7291ff, rgb(44, 71, 109));
     padding: 10rem 0;
 }
 
 .dark-mode-title {
-    color: #1d1d1f; /* Quase preto, bem elegante */
+    color: #fbfbfc;
+    /* Adicionamos o clamp para ficar idêntico aos outros títulos grandes */
+    font-size: clamp(2.5rem, 4vw, 4rem); 
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
 }
 
 /* Grid de 3 Colunas */
@@ -531,7 +536,7 @@ body {
 }
 
 /* Defina suas imagens reais aqui */
-.sol-bg-1 { background-image: url('assets/img/card-vr.jpg'); background-size: cover; background-position: center; }
+.sol-bg-1 { background-image: url('assets/card-cap.png'); background-size: cover; background-position: center; }
 .sol-bg-2 { background-image: url('assets/img/card-motion.jpg'); background-size: cover; background-position: center; }
 .sol-bg-3 { background-image: url('assets/img/card-interativo.jpg'); background-size: cover; background-position: center; }
 
