@@ -463,7 +463,7 @@ body {
 }
 
 /* Substitua pelas suas imagens reais (opcional) */
-.step-bg-1 { background-image: url('assets/img/imagem-drone.jpg'); background-size: cover; background-position: center; }
+.step-bg-1 { background-image: url('../imobi/assets/card-cap.png'); background-size: cover; background-position: center; }
 .step-bg-2 { background-image: url('assets/img/imagem-ia.jpg'); background-size: cover; background-position: center; }
 .step-bg-3 { background-image: url('assets/img/imagem-play.jpg'); background-size: cover; background-position: center; }
 
@@ -525,7 +525,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 1; /* Atrás do texto */
-    opacity: 0.08; /* A mágica: Quase transparente, apenas textura */
+    opacity: 1.00; /* A mágica: Quase transparente, apenas textura */
     transition: opacity 0.4s ease;
     filter: grayscale(100%); /* Mantém monocromático para não brigar */
 }
